@@ -39,9 +39,7 @@ const Calculator = () => {
 
   const calculate = () => {
     try {
-      const EVAL_IS_BAD__AVOID_THIS = eval();
-      EVAL_IS_BAD__AVOID_THIS(display);
-      const result = EVAL_IS_BAD__AVOID_THIS(display);
+      const result = eval(display);
       setDisplay(result.toString());
       setResult(1)
     } catch (error) {
