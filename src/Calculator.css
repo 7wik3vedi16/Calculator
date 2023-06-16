@@ -1,0 +1,159 @@
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.display {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: right;
+  padding: 10px;
+  width: 292px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 12px;
+  background-color: #d2bcbc;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 300px;
+  grid-gap: 3px;
+}
+
+button {
+  margin:2px;
+  padding: 20px;
+  font-size: 18px;
+  background-color: #f7f7f7;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  color: #000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+button:hover {
+  background-color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  /* animation: flicker 0.3s infinite alternate; */
+  background-color: aquamarine;
+}
+
+.operator {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.equal {
+  background-color: #ff9800;
+  color: #fff;
+  grid-column: span 2;
+}
+
+.clear {
+  width:143px;
+  padding: 20px;
+  font-size: 18px;
+  background-color: #f7f7f7;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.2);
+}
+.zero
+{
+  width:219px;
+  background-color: #f44336;
+  color: #fff;
+}
+
+.row {
+  display: flex;
+}
+
+.row:last-child button:not(.clear):not(.equal) {
+  flex-basis: 25%;
+}
+
+button:hover:before {
+  opacity: 0;
+}
+
+/* @keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+  
+} */
+
+.button-rotate {
+  animation: rotate 1s linear infinite;
+}
+
+.button-bounce {
+  animation: bounce 0.5s ease infinite;
+}
+
+.button-slide-in {
+  animation: slide-in 0.5s ease;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
